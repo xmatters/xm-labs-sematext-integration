@@ -73,7 +73,7 @@ To import the communication plan:
 3. On the Flow Canvas, Double Click on the **Inbound Sematext Trigger** step.
 
 <kbd>
-    <img src="/media/atrigger_step.png">
+    <img src="/media/trigger_step.png">
 </kbd>
 
 4. Change the _Authenticating User_ to the **Sematext_API_User**
@@ -105,13 +105,13 @@ By default, this integration will create an xMatters Alert with basic property v
 1. In the Triggers tab under HTTP Requests section, click the Cog and then Edit.
 
 <kbd>
-    <img src="/media/trigger_edit.png">
+    <img src="/media/edit_trigger.png">
 </kbd>
 
 2. Go to the **OUTPUTS** Tab and add new **Step Outputs**
 
 <kbd>
-    <img src="/media/create_output.png">
+    <img src="/media/create_outputs.png">
 </kbd>
 
 3. Go to the **SCRIPT** tab and modify your script appropriately.
@@ -133,7 +133,7 @@ Example: _output['New Output'] = payload['Another value'];_
 3. Beside Sematext Alert Form, click **Edit** and go to **Layout**.
 
 <kbd>
-    <img src="/media/sematext_alert_form">
+    <img src="/media/sematext_alert_form.png">
 </kbd>
 
 4. Create new Properties.
@@ -143,14 +143,14 @@ Example: _output['New Output'] = payload['Another value'];_
 6. Save Changes.
 
 <kbd>
-    <img src="/media/form_layout">
+    <img src="/media/form_layout.png">
 </kbd>
 
 7. Make any required changes to **Messages** and **Responses**.
 
 ## Customize **xMatters Create Event (Sematext Alert)** Step
 
-Once you have added new propties to the Sematext Alert form, they will become availabe in the **xMatters Create Event (Sematext Alert)** Step for you to map payload properties to.
+Once you have added new properties to the Sematext Alert form, they will become available in the **xMatters Create Event (Sematext Alert)** Step for you to map payload properties to.
 
 1. On the Flow Canvas double click the **xMatters Create Event (Sematext Alert)** Step
 
@@ -158,7 +158,7 @@ Once you have added new propties to the Sematext Alert form, they will become av
     <img src="/media/create_event_step.png">
 </kbd>
 
-2. Drag items from the right to exiting or new fields.
+2. Drag items from the right to existing or new fields.
 
 <kbd>
     <img src="/media/custom_create_event.png">
