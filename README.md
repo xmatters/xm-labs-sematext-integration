@@ -50,29 +50,32 @@ To import the communication plan:
 5. In the **Edit** drop-down list, select **Access Permissions**.
 
 <kbd>
-    <img src="/media/access_permissions.png">
+    <img src="/media/access_permissions.png" width="300">
 </kbd>
+<br><br>
 
 6. Add the **Sematext_API_User** or Make the Plan **Accessible by All**.
 7. **Save Changes**.
 
 <kbd>
-    <img src="/media/set_access_permissions.png">
+    <img src="/media/set_access_permissions.png" width="300">
 </kbd>
+<br><br>
 
 8. In the **Edit** drop-down list, select **Forms**.
 9. For the **Sematext Alert** form, in the **Not Deployed** drop-down list, click **Enable for Web Service**.
 
 <kbd>
-    <img src="/media/enable_ws.png">
+    <img src="/media/enable_ws.png" width="300">
 </kbd>
+<br><br>
 
 10. After you Enable for Web Service, the drop-down list label will change to **Web Service**.
 11. In the **Web Service** drop-down list, click **Sender Permissions**.
 12. Add the **Sematext_API_User** you created above, and then click **Save Changes**.
 
 <kbd>
-    <img src="/media/sender_permissions.png">
+    <img src="/media/sender_permissions.png" width="300">
 </kbd>
 
 <br><br>
@@ -124,12 +127,14 @@ _Here is an example of a possible Flow:_
 <kbd>
     <img src="/media/edit_trigger.png">
 </kbd>
+<br><br>
 
 2. Go to the **OUTPUTS** Tab and add new **Step Outputs**. Outputs are values that will be available for subsiquent steps.
 
 <kbd>
-    <img src="/media/create_outputs.png">
+    <img src="/media/create_outputs.png" width="550px">
 </kbd>
+<br><br>
 
 3. Go to the **SCRIPT** tab and modify your script appropriately.
 
@@ -141,8 +146,9 @@ Example: _output['New Output'] = payload['Another value'];_
     payload['Another value'] - this is a value in your payload with the key "Another value" sent to xMatters from Sematext.
 
 <kbd>
-    <img src="/media/edit_script.png">
+    <img src="/media/edit_script.png" width="650px">
 </kbd>
+<br><br>
 
 ## Add additional / custom properties to the Sematext Alert Form.
 
@@ -155,6 +161,7 @@ Example: _output['New Output'] = payload['Another value'];_
 <kbd>
     <img src="/media/sematext_alert_form.png">
 </kbd>
+<br><br>
 
 4. Create new Properties.
 
@@ -167,14 +174,17 @@ Example: _output['New Output'] = payload['Another value'];_
 6. Save Changes.
 
 <kbd>
-    <img src="/media/form_layout.png">
+    <img src="/media/form_layout.png" width="650px">
 </kbd>
+<br><br>
 
 7. Make any required changes to **Messages** and **Responses**.
 
 <kbd>
-    <img src="/media/messages_responses.png">
+    <img src="/media/messages_responses.png" width="350px">
 </kbd>
+
+<br><br>
 
 ## Customize **xMatters Create Event (Sematext Alert)** Step
 
@@ -185,12 +195,14 @@ Once you have added new properties to the Sematext Alert form, they will become 
 <kbd>
     <img src="/media/create_event_step.png">
 </kbd>
+<br><br>
 
 2. Drag items from the right to the appropriate fields on the left. Any new fields you have added to the form layout will be available here.
 
 <kbd>
-    <img src="/media/custom_create_event.png">
+    <img src="/media/custom_create_event.png" width="650px">
 </kbd>
+<br><br>
 
 # Configuring Sematext
 
@@ -214,14 +226,18 @@ Set the URL (hook url) field to the xMatters Inbound Integration Endpoint URL.
 **Add Parameters**:
 
 description = $description
+<br>
 title = $title
+<br>
 app_id = \$app_id
+<br><br>
 
 Add any additional parameters / values you want to pass to xMatters
 
 <kbd>
     <img src="/media/webhook.png">
 </kbd>
+<br><br>
 
 ## Create New Alert Rule
 
