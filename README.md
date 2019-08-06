@@ -24,11 +24,9 @@ Sematext will create an xMatters alert when new Logs or Events in Sematext meet 
 
 ### Create an xMatters Integration User
 
-Although this step is not required, it is recommended. This will enhance security and ensuring the integration does not unintentionally break.
+Although this step is not required, it is recommended. This will enhance security and ensure the integration does not unintentionally break when a password is changed.
 
 **Note**: If you are installing this integration into an xMatters trial instance, you don't need to create a new user. Instead, locate the "Integration User" sample user that was automatically configured with the REST Web Service User role when your instance was created and assign them a new password. You can then skip ahead to the next section.
-
-**Note 2**: This user won't be able to "see" other users with the Company Supervisor role and so won't be able to authenticate
 
 **To create an integration user:**
 
@@ -50,21 +48,39 @@ To import the communication plan:
 3. Click **Import Plan**.
 4. Once the communication plan has been imported, click **Plan Disabled** to enable the plan.
 5. In the **Edit** drop-down list, select **Access Permissions**.
+
+<kbd>
+    <img src="/media/access_permissions.png">
+</kbd>
+
 6. Add the **Sematext_API_User** or Make the Plan **Accessible by All**.
 7. **Save Changes**.
-8. In the **Edit** drop-down list, select **Forms**.
 
+<kbd>
+    <img src="/media/set_access_permissions.png">
+</kbd>
+
+8. In the **Edit** drop-down list, select **Forms**.
 9. For the **Sematext Alert** form, in the **Not Deployed** drop-down list, click **Enable for Web Service**.
+
+<kbd>
+    <img src="/media/enable_ws.png">
+</kbd>
+
 10. After you Enable for Web Service, the drop-down list label will change to **Web Service**.
 11. In the **Web Service** drop-down list, click **Sender Permissions**.
 12. Add the **Sematext_API_User** you created above, and then click **Save Changes**.
+
+<kbd>
+    <img src="/media/sender_permissions.png">
+</kbd>
 
 <br><br>
 
 ## Get the xMatters Inbound Integration Endpoint URL
 
 1. In the **Edit** drop down list on the _Sematext Alerts Communication Plan_ Click **Flow**.
-2. Click on the Sematext Alert Flow.
+2. Click on the _Sematext Alert_ Flow.
 
 <kbd>
     <img src="/media/access_flow.png">
@@ -78,7 +94,7 @@ To import the communication plan:
 
 4. Change the _Authenticating User_ to the **Sematext_API_User**
 
-You must supervise this user and it must have a Web Service User Role. If you cannot select the **Sematext_API_User** if it because you do not supervise that user or they do not have the REST Web Service User role.
+You must supervise this user and it must have a Web Service User Role. If you cannot select the **Sematext_API_User** if it because you do not supervise that user or they do not have the REST Web Service User role. When you create a new user you are automatically set as that users supervisor. If you do not see the user that you created, most likely the REST Web Service role is missing.
 
 5. Copy the URL listed under the **Trigger** section.
 
@@ -96,9 +112,10 @@ By default, this integration will create an xMatters Alert with basic property v
 
 **Note:**:If you customize the flow, just make sure that you do not remove the **xMatters Create Event (Sematext Alert)** Step. This step creates the actual xMatters alert. This step can come right after Create Sematext Alert Step or after other steps that you add to the canvas, it's up to you.
 
-  <kbd>
-    <img src="/media/sample_flow.png">
-  </kbd>
+_Here is an example of a possible Flow:_
+<kbd>
+<img src="/media/sample_flow.png">
+</kbd>
 
 ## Customize **Inbound Sematext Trigger** Step
 
@@ -108,7 +125,7 @@ By default, this integration will create an xMatters Alert with basic property v
     <img src="/media/edit_trigger.png">
 </kbd>
 
-2. Go to the **OUTPUTS** Tab and add new **Step Outputs**
+2. Go to the **OUTPUTS** Tab and add new **Step Outputs**. Outputs are values that will be available for subsiquent steps.
 
 <kbd>
     <img src="/media/create_outputs.png">
@@ -119,6 +136,9 @@ By default, this integration will create an xMatters Alert with basic property v
 - Each Output added in Step 2 will need to be mapped to a value in your payload. This takes the incoming values from Sematext and sets the xMatters properties to hold these values.
 
 Example: _output['New Output'] = payload['Another value'];_
+
+    output['New Output'] - this is an output added in step 2. The output name is "New Output"
+    payload['Another value'] - this is a value in your payload with the key "Another value" sent to xMatters from Sematext.
 
 <kbd>
     <img src="/media/edit_script.png">
@@ -138,6 +158,10 @@ Example: _output['New Output'] = payload['Another value'];_
 
 4. Create new Properties.
 
+<kbd>
+    <img src="/media/add_property.png">
+</kbd>
+
 5. Drag new Properties onto the Form.
 
 6. Save Changes.
@@ -147,6 +171,10 @@ Example: _output['New Output'] = payload['Another value'];_
 </kbd>
 
 7. Make any required changes to **Messages** and **Responses**.
+
+<kbd>
+    <img src="/media/messages_responses.png">
+</kbd>
 
 ## Customize **xMatters Create Event (Sematext Alert)** Step
 
@@ -158,7 +186,7 @@ Once you have added new properties to the Sematext Alert form, they will become 
     <img src="/media/create_event_step.png">
 </kbd>
 
-2. Drag items from the right to existing or new fields.
+2. Drag items from the right to the appropriate fields on the left. Any new fields you have added to the form layout will be available here.
 
 <kbd>
     <img src="/media/custom_create_event.png">
@@ -166,9 +194,9 @@ Once you have added new properties to the Sematext Alert form, they will become 
 
 # Configuring Sematext
 
-## Create New Notification Hook
+## Create a New Notification Hook
 
-Follow instructions here to create new Custom Notification Hook:
+Follow instructions here to create new Custom Notification Hooks in Sematext:
 https://sematext.com/docs/integration/alerts-webhooks-integration/
 
 Here is how you should configure each value:
@@ -209,3 +237,8 @@ Configure your alert rule to use the Custom Notification Hook created in the las
 <br><br>
 
 # Troubleshooting
+
+Trigger a new Sematext Alert and check that it makes its way into xMatters.
+
+You can check the Inbound Integration Activity Log in xMatters:
+https://help.xmatters.com/ondemand/xmodwelcome/integrationbuilder/create-inbound-updates.htm
