@@ -14,7 +14,6 @@ Create xMatters Alerts from Sematext
 # Files
 
 - [xMatters Sematext Communication Plan](ServiceNowUpdates/xMattersConfig-script_include.xml)
-- [xMattersIncident Script Include update XML](ServiceNowUpdates/xMattersIncident-script_include.xml)
 
 # How it works
 
@@ -230,7 +229,11 @@ description = $description
 title = $title
 <br>
 app_id = \$app_id
+<br>
+group = Your xMatters Target Group Name
 <br><br>
+
+**NOTE: You will want to create an Sematext Notification Hook for each group you want to target in xMatters. Each Notification Hook will be associated to a Sematext Alert Rule. By changing the group parameter, you can target different xMatters groups depending on the alert rule triggered in Sematext.**
 
 Add any additional parameters / values you want to pass to xMatters
 
