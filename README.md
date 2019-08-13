@@ -1,6 +1,6 @@
 # Sematext xMatters Integration
 
-Create xMatters Alerts when Sematext alert rules are met.
+Trigger an xMatters Flow to alert xMatters groups and easily integrate with other applications when a Sematext calert rule is met.
 
 <kbd>
   <img src="https://github.com/xmatters/xMatters-Labs/raw/master/media/disclaimer.png">
@@ -65,7 +65,7 @@ To import the communication plan:
 9. For the **Sematext Alert** form, in the **Not Deployed** drop-down list, click **Enable for Web Service**.
 
 <kbd>
-    <img src="/media/enable_ws.png" width="300">
+    <img src="/media/enable_ws.png" width="600">
 </kbd>
 <br><br>
 
@@ -96,7 +96,7 @@ To import the communication plan:
 
 4. Change the _Authenticating User_ to the **Sematext_API_User**
 
-You must supervise this user and it must have a Web Service User Role. If you cannot select the **Sematext_API_User** if it because you do not supervise that user or they do not have the REST Web Service User role. When you create a new user you are automatically set as that users supervisor. If you do not see the user that you created, most likely the REST Web Service role is missing.
+You must supervise this user and it must have a Web Service User Role. If you cannot select the **Sematext_API_User** it is because you do not supervise that user or they do not have the REST Web Service User role. When you create a new user, you are automatically set as that users' supervisor. If you do not see the user that you created, most likely the REST Web Service role is missing.
 
 5. Copy the URL listed under the **Trigger** section.
 
