@@ -1,6 +1,6 @@
 # Sematext xMatters Integration
 
-Create xMatters Alerts from Sematext
+Create xMatters Alerts when Sematext alert rules are met.
 
 <kbd>
   <img src="https://github.com/xmatters/xMatters-Labs/raw/master/media/disclaimer.png">
@@ -13,7 +13,7 @@ Create xMatters Alerts from Sematext
 
 # Files
 
-- [xMatters Sematext Communication Plan](ServiceNowUpdates/xMattersConfig-script_include.xml)
+- [xMatters Sematext Communication Plan](Sematext.zip)
 
 # How it works
 
@@ -43,7 +43,7 @@ Although this step is not required, it is recommended. This will enhance securit
 To import the communication plan:
 
 1. In the target xMatters system, on the **Developer** tab, click **Import Plan**.
-2. Click **Browse**, and then locate the downloaded communication plan: [Sematext Alerts](SematextAlerts.zip)
+2. Click **Browse**, and then locate the downloaded communication plan: [Sematext](Sematext.zip)
 3. Click **Import Plan**.
 4. Once the communication plan has been imported, click **Plan Disabled** to enable the plan.
 5. In the **Edit** drop-down list, select **Access Permissions**.
@@ -88,7 +88,7 @@ To import the communication plan:
     <img src="/media/access_flow.png">
 </kbd>
 
-3. On the Flow Canvas, Double Click on the **Inbound Sematext Trigger** step.
+3. On the Flow Canvas, Double Click on the step named **Sematext Flow Trigger**. This is the inbound http trigger for the Flow.
 
 <kbd>
     <img src="/media/trigger_step.png">
@@ -119,7 +119,7 @@ _Here is an example of a possible Flow:_
 <img src="/media/sample_flow.png">
 </kbd>
 
-## Customize **Inbound Sematext Trigger** Step
+## Customize **Sematext Flow Trigger** Step
 
 1. In the Triggers tab under HTTP Requests section, click the Cog and then Edit.
 
@@ -171,11 +171,6 @@ Example: _output['New Output'] = payload['Another value'];_
 5. Drag new Properties onto the Form.
 
 6. Save Changes.
-
-<kbd>
-    <img src="/media/form_layout.png" width="650px">
-</kbd>
-<br><br>
 
 7. Make any required changes to **Messages** and **Responses**.
 
@@ -259,5 +254,5 @@ Configure your alert rule to use the Custom Notification Hook created in the las
 
 Trigger a new Sematext Alert and check that it makes its way into xMatters.
 
-You can check the Inbound Integration Activity Log in xMatters:
-https://help.xmatters.com/ondemand/xmodwelcome/integrationbuilder/create-inbound-updates.htm
+You can check the Activity Log of Flow Designer with these instructions.
+https://help.xmatters.com/ondemand/xmodwelcome/flowdesigner/activity-panel.htm
