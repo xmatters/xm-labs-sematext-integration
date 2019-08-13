@@ -1,6 +1,6 @@
 # Sematext xMatters Integration
 
-Trigger an xMatters Flow to alert xMatters groups and easily integrate with other applications when a Sematext calert rule is met.
+Trigger an xMatters Flow to alert xMatters groups and easily integrate with other applications when a Sematext alert rule is met.
 
 <kbd>
   <img src="https://github.com/xmatters/xMatters-Labs/raw/master/media/disclaimer.png">
